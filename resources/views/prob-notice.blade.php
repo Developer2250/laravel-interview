@@ -11,6 +11,10 @@ $remainingProbability = 100 - $currentProbability;
 <!-- display error message in alert box -->
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
     {{ __('message.error1') }} {{ __('message.error2') }} <bold> {{ $currentProbability }}% </bold>
-    {{ __('message.error3') }} <bold>{{ $remainingProbability }}% </bold> {{ __('message.error4') }}
+
+    @if($remainingProbability != 0)
+        {{ __('message.error3') }} <bold>{{ $remainingProbability }}% </bold> {{ __('message.error4') }}
+    @endif
+
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
